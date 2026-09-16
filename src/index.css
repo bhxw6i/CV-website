@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #142219;
+    --bg-dark-card: #1b2d22;
+    --bg-cream: #f4efea;
+    --bg-cream-card: #e9e3da;
+    --orange: #e05a2b;
+    --orange-hover: #c8491d;
+    --gold: #e5ac39;
+    --border-dark: rgba(244, 239, 234, 0.12);
+    --border-cream: rgba(20, 34, 25, 0.15);
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: #f4efea;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Typography Utilities */
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-editorial {
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.font-sans-clean {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Custom Text Stroke Effect for outlined typography */
+.text-outline-cream {
+  -webkit-text-stroke: 1.5px rgba(244, 239, 234, 0.35);
+  color: transparent;
+}
+
+.text-outline-gold {
+  -webkit-text-stroke: 1.5px rgba(229, 172, 57, 0.4);
+  color: transparent;
+}
+
+.text-outline-dark {
+  -webkit-text-stroke: 1.5px rgba(20, 34, 25, 0.25);
+  color: transparent;
+}
+
+/* Custom Noise Overlay */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #101c14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #284030;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e05a2b;
+}
+
+/* Selection */
+::selection {
+  background-color: #e05a2b;
+  color: #ffffff;
+}
+
+/* Custom Cursor Rules */
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor-enabled {
+    cursor: none;
+  }
+  .custom-cursor-enabled a,
+  .custom-cursor-enabled button,
+  .custom-cursor-enabled input,
+  .custom-cursor-enabled textarea {
+    cursor: none;
+  }
+}
+
+/* Smooth transitions */
+.transition-editorial {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Marquee / Text animation helpers */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
