@@ -124,6 +124,7 @@ export const cvData = {
   skills: {
     "Languages & Frameworks": [
       { name: "Java", desc: "Core language for backend enterprise apps & utility logic" },
+      { name: "Python", desc: "Core language for data analysis, AI/ML work & backend logic" },
       { name: "JavaScript", desc: "ES6+ language powering interactive web frontend applications" },
       { name: "React", desc: "Modern UI library for component-based SPAs" },
       { name: "Spring Boot", desc: "Java framework for building production-grade REST APIs" },
